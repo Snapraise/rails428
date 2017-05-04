@@ -43,3 +43,34 @@ group :development do
   gem 'spring'
 end
 
+# =>
+
+gem 'high_voltage'
+# gem 'rails_admin'
+# gem 'sidekiq'
+# gem 'sidekiq-enqueuer', github: 'richfisher/sidekiq-enqueuer'
+# gem 'sinatra', require: nil, github: 'sinatra/sinatra'
+# gem 'redis'
+# gem 'hiredis'
+# gem 'redis-namespace', '1.5.2'
+# gem 'readthis'#, '1.3.0'
+# gem 'redis-browser', github: 'humante/redis-browser'
+# gem 'whenever'
+
+group :development do
+  gem 'foreman'
+  gem 'faker'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # gem 'rack-mini-profiler'
+  # gem 'brakeman'
+  # gem 'bundler-audit'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'awesome_print'
+end

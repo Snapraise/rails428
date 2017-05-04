@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+
+  root 'home#index'
+  get 'home/index'
+
+  # require 'sidekiq/web'
+  # mount Sidekiq::Web => '/sidekiq'
+  #
+  # mount RedisBrowser::Web => '/redis'
+  #
+  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
