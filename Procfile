@@ -1,2 +1,2 @@
 web: rails s
-# worker: sidekiq
+worker: sidekiq

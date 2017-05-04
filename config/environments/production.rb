@@ -73,4 +73,9 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # =>
+  config.redis_host = 'amplo-stg.lohnj6.0001.usw2.cache.amazonaws.com'
+  config.active_job.queue_adapter = :sidekiq
+  
 end

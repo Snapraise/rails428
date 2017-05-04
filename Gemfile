@@ -47,15 +47,15 @@ end
 
 gem 'high_voltage'
 gem 'rails_admin'
-# gem 'sidekiq'
-# gem 'sidekiq-enqueuer', github: 'richfisher/sidekiq-enqueuer'
+gem 'sidekiq'
+gem 'sidekiq-enqueuer', github: 'richfisher/sidekiq-enqueuer'
 # gem 'sinatra', require: nil, github: 'sinatra/sinatra'
-# gem 'redis'
-# gem 'hiredis'
-# gem 'redis-namespace', '1.5.2'
-# gem 'readthis'#, '1.3.0'
-# gem 'redis-browser', github: 'humante/redis-browser'
-# gem 'whenever'
+gem 'redis'
+gem 'hiredis'
+gem 'redis-namespace', '1.5.2'
+gem 'readthis'#, '1.3.0'
+gem 'redis-browser'#, github: 'humante/redis-browser'
+gem 'whenever'
 
 group :development do
   gem 'foreman'
