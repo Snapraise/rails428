@@ -46,7 +46,7 @@ end
 # =>
 
 gem 'high_voltage'
-# gem 'rails_admin'
+gem 'rails_admin'
 # gem 'sidekiq'
 # gem 'sidekiq-enqueuer', github: 'richfisher/sidekiq-enqueuer'
 # gem 'sinatra', require: nil, github: 'sinatra/sinatra'
