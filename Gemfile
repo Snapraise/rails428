@@ -47,6 +47,10 @@ end
 
 gem 'high_voltage'
 gem 'rails_admin'
+#gem 'rmagick', require: false
+gem 'sitemap_generator'
+gem 'whenever'
+
 gem 'sidekiq'
 gem 'sidekiq-enqueuer', github: 'richfisher/sidekiq-enqueuer'
 # gem 'sinatra', require: nil, github: 'sinatra/sinatra'
@@ -55,7 +59,6 @@ gem 'hiredis'
 gem 'redis-namespace', '1.5.2'
 gem 'readthis'#, '1.3.0'
 gem 'redis-browser'#, github: 'humante/redis-browser'
-gem 'whenever'
 
 group :development do
   gem 'foreman'
