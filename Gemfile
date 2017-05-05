@@ -51,6 +51,7 @@ gem 'rails_admin'
 gem 'sitemap_generator'
 gem 'whenever'
 gem 'bootstrap-sass'
+gem 'react_on_rails'
 
 gem 'sidekiq'
 gem 'sidekiq-enqueuer', github: 'richfisher/sidekiq-enqueuer'
