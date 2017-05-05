@@ -50,6 +50,7 @@ gem 'rails_admin'
 #gem 'rmagick', require: false
 gem 'sitemap_generator'
 gem 'whenever'
+gem 'bootstrap-sass'
 
 gem 'sidekiq'
 gem 'sidekiq-enqueuer', github: 'richfisher/sidekiq-enqueuer'
