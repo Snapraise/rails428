@@ -79,3 +79,5 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'awesome_print'
 end
+
+gem 'mini_racer', platforms: :ruby
