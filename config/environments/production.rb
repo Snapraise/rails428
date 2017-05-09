@@ -75,7 +75,7 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # =>
-  config.redis_host = 'amplo-stg.lohnj6.0001.usw2.cache.amazonaws.com'
+  config.redis_host = ENV['REDIS_HOST']
   config.active_job.queue_adapter = :sidekiq
 
 end
