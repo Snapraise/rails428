@@ -1,4 +1,4 @@
-class DmitryJob < ActiveJob::Base
+class SidekiqJob < ApplicationJob
   queue_as :default
 
   def perform(*args)

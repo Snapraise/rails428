@@ -66,6 +66,8 @@ gem 'redis-namespace', '1.5.2'
 gem 'readthis'#, '1.3.0'
 gem 'redis-browser'#, github: 'humante/redis-browser'
 
+gem 'shoryuken'
+
 group :development do
   gem 'foreman'
   gem 'faker'

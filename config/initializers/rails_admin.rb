@@ -1,3 +1,26 @@
+module RailsAdmin
+  module Config
+    module Actions
+
+      class SqsJobPerform < RailsAdmin::Config::Actions::Base
+        RailsAdmin::Config::Actions.register(self)
+        register_instance_option :root      do  true  end
+        register_instance_option :visible?  do  authorized?  end
+        register_instance_option :link_icon do 'fa fa-tasks'  end
+        register_instance_option :controller do
+          proc do
+            SqsJob.perform_later
+            flash[:notice] = "SqsJob"
+            redirect_to back_or_index
+          end
+        end
+      end
+
+    end
+  end
+end
+
+
 RailsAdmin.config do |config|
 
   ### Popular gems integration
@@ -37,5 +60,8 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
+    # =>
+    sqs_job_perform
   end
 end
