@@ -45,11 +45,15 @@ end
 
 # =>
 
+gem 'mongoid'
+gem 'devise'
+gem 'enumerize', '0.10.1'
 gem 'high_voltage'
 gem 'rails_admin'
 #gem 'rmagick', require: false
 gem 'sitemap_generator'
 gem 'whenever'
+
 gem 'bootstrap-sass'
 gem 'react_on_rails'
 

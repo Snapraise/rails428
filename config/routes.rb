@@ -2,16 +2,20 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'home/index'
-  get 'health', to: 'home#health'  
+  get 'health', to: 'home#health'
   get 'hello_world', to: 'hello_world#index'
 
-  require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
+  devise_for :users
 
-  mount RedisBrowser::Web => '/redis'
+  authenticate :user, lambda { |u| u.roles.include? :superadmin } do
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq'
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+    mount RedisBrowser::Web => '/redis'
 
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
