@@ -7,15 +7,15 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  authenticate :user, lambda { |u| u.roles.include? :superadmin } do
+  #authenticate :user, lambda { |u| u.roles.include? :superadmin } do
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq'
 
     mount RedisBrowser::Web => '/redis'
 
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  end
-  
+  #end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
