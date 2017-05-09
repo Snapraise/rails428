@@ -152,7 +152,7 @@ production:
     # Defines the default client. (required)
     default:
       # https://devcenter.heroku.com/articles/mongolab
-      uri: "mongodb://<%= ENV['MONGO_USER'] %>:<%= ENV['MONGO_PASSWORD'] %>@<%= ENV['MONGO_HOSTS'] %>/amplo"
+      uri: "mongodb://<%= ENV['MONGO_USER'] %>:<%= ENV['MONGO_PASSWORD'] %>@<%= ENV['MONGO_HOSTS'] %>/rails428"
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       # database: amplo
