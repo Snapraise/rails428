@@ -42,6 +42,7 @@ Rails.application.configure do
 
   # =>
   config.redis_host = 'localhost'
+  config.sidekiq_redis_host = 'localhost'
   config.active_job.queue_adapter = :inline
-  
+
 end

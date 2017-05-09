@@ -76,6 +76,7 @@ Rails.application.configure do
 
   # =>
   config.redis_host = ENV['REDIS_HOST']
+  config.sidekiq_redis_host = ENV['SIDEKIQ_REDIS_HOST']
   config.active_job.queue_adapter = :sidekiq
 
 end
