@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'home/index'
+  get 'health', to: 'home#health'  
   get 'hello_world', to: 'hello_world#index'
 
   require 'sidekiq/web'
