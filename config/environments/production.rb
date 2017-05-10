@@ -78,6 +78,6 @@ Rails.application.configure do
   config.redis_host = ENV['REDIS_HOST']
   config.sidekiq_redis_host = ENV['SIDEKIQ_REDIS_HOST']
   config.active_job.queue_adapter = :sidekiq
-  config.action_controller.asset_host = "//s3.amazonaws.com/#{ENV['FOG_DIRECTORY']}"
+  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
 
 end
