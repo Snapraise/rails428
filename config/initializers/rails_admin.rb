@@ -11,7 +11,21 @@ module RailsAdmin
           proc do
             SqsJob.perform_later
             flash[:notice] = "SqsJob"
-            redirect_to back_or_index
+            redirect_to dashboard_path
+          end
+        end
+      end
+
+      class SidekiqJobPerform < RailsAdmin::Config::Actions::Base
+        RailsAdmin::Config::Actions.register(self)
+        register_instance_option :root      do  true  end
+        register_instance_option :visible?  do  authorized?  end
+        register_instance_option :link_icon do 'fa fa-tasks'  end
+        register_instance_option :controller do
+          proc do
+            SidekiqJob.perform_later
+            flash[:notice] = "SidekiqJob"
+            redirect_to dashboard_path
           end
         end
       end
@@ -63,5 +77,6 @@ RailsAdmin.config do |config|
 
     # =>
     sqs_job_perform
+    sidekiq_job_perform
   end
 end
