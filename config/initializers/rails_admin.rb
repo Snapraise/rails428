@@ -2,30 +2,21 @@ module RailsAdmin
   module Config
     module Actions
 
-      class SqsJobPerform < RailsAdmin::Config::Actions::Base
+      class JobPerform < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
         register_instance_option :root      do  true  end
         register_instance_option :visible?  do  authorized?  end
         register_instance_option :link_icon do 'fa fa-tasks'  end
+        register_instance_option :http_methods do [:get, :post] end
         register_instance_option :controller do
           proc do
-            SqsJob.perform_later
-            flash[:notice] = "SqsJob"
-            redirect_to dashboard_path
-          end
-        end
-      end
-
-      class SidekiqJobPerform < RailsAdmin::Config::Actions::Base
-        RailsAdmin::Config::Actions.register(self)
-        register_instance_option :root      do  true  end
-        register_instance_option :visible?  do  authorized?  end
-        register_instance_option :link_icon do 'fa fa-tasks'  end
-        register_instance_option :controller do
-          proc do
-            SidekiqJob.perform_later
-            flash[:notice] = "SidekiqJob"
-            redirect_to dashboard_path
+            if request.post?
+              # Parameters: {..."job_perform"=>{"job_name"=>"SidekiqDefaultJob"}, "commit"=>"Submit"}
+              job_class = params['job_perform']['job_class']
+              job_class.constantize.perform_later
+              flash[:notice] = "Queued #{job_class}"
+              redirect_to dashboard_path
+            end
           end
         end
       end
@@ -76,7 +67,6 @@ RailsAdmin.config do |config|
     # history_show
 
     # =>
-    sqs_job_perform
-    sidekiq_job_perform
+    job_perform
   end
 end

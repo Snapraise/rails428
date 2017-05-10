@@ -54,6 +54,7 @@ gem 'rails_admin'
 gem 'sitemap_generator'
 gem 'whenever'
 
+gem 'simple_form'
 gem 'asset_sync'
 gem 'fog-aws'
 gem 'bootstrap-sass'

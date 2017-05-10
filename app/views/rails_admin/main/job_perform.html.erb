@@ -1,0 +1,7 @@
+<h4>Job Perform</h4>
+<%= simple_form_for :job_perform, method: :post, html: { class: 'form-inline' } do |f| %>
+  <%= f.input :job_class, collection: ['SidekiqDefaultJob', 'SidekiqLowJob', 'SidekiqHighJob',
+    'SqsDefaultJob', 'SqsLowJob', 'SqsHighJob'] %>
+  <br/>
+  <%= f.button :submit, 'Submit', class: 'btn btn-info' %>
+<% end %>

@@ -281,6 +281,9 @@ GEM
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
       redis (~> 3.3, >= 3.3.3)
+    simple_form (3.4.0)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     sinatra (1.4.8)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -368,6 +371,7 @@ DEPENDENCIES
   shoryuken
   sidekiq
   sidekiq-enqueuer!
+  simple_form
   sitemap_generator
   spring
   turbolinks

@@ -1,5 +1,5 @@
 Sidekiq::Enqueuer.configure do |config|
-  config.jobs = [SidekiqJob]
+  config.jobs = [SidekiqLowJob, SidekiqDefaultJob, SidekiqHighJob]
 end
 
 Sidekiq.configure_server do |config|
