@@ -50,10 +50,11 @@ gem 'devise'
 gem 'enumerize', '0.10.1'
 gem 'high_voltage'
 gem 'rails_admin'
-#gem 'rmagick', require: false
 gem 'sitemap_generator'
 gem 'whenever'
 
+gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
+gem 'rmagick', require: false
 gem 'simple_form'
 gem 'asset_sync'
 gem 'fog-aws'

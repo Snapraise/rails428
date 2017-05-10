@@ -39,4 +39,7 @@ class User
   extend Enumerize
   enumerize :roles, in: ['superadmin', 'am', 'salesrep'], multiple: true
 
+  field :image
+  mount_uploader :image, UserUploader
+
 end
