@@ -1,3 +1,3 @@
 class SqsJob < ApplicationJob
-  self.queue_adapter = :shoryuken
+  #self.queue_adapter = :shoryuken
 end

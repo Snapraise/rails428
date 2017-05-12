@@ -1,7 +1,7 @@
 # => https://github.com/phstc/shoryuken/wiki/Rails-Integration-Active-Job
-Shoryuken.active_job_queue_name_prefixing = true
+#Shoryuken.active_job_queue_name_prefixing = true
 
-Shoryuken.configure_server do |config|
+#Shoryuken.configure_server do |config|
   # Replace Rails logger so messages are logged wherever Shoryuken is logging
   # Note: this entire block is only run by the processor, so we don't overwrite
   #       the logger when the app is running as usual.
@@ -12,4 +12,4 @@ Shoryuken.configure_server do |config|
   # config.server_middleware do |chain|
   #  chain.add Shoryuken::MyMiddleware
   # end
-end
+#end
