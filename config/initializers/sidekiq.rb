@@ -3,9 +3,19 @@ Sidekiq::Enqueuer.configure do |config|
 end
 
 Sidekiq.configure_server do |config|
-  config.redis = { host: Rails.application.config.sidekiq_redis_host, post: 6379, db: 0, namespace: 'sidekiq' }
+  config.redis = {
+    host: Rails.application.config.sidekiq_redis_host,
+    port: 6379,
+    db: Rails.application.config.sidekiq_redis_db,
+    namespace: 'sidekiq'
+  }
 end
 
 Sidekiq.configure_client do |config|
-  config.redis = { host: Rails.application.config.sidekiq_redis_host, post: 6379, db: 0, namespace: 'sidekiq' }
+  config.redis = {
+    host: Rails.application.config.sidekiq_redis_host,
+    port: 6379,
+    db: Rails.application.config.sidekiq_redis_db,
+    namespace: 'sidekiq'
+  }
 end

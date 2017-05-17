@@ -43,6 +43,7 @@ Rails.application.configure do
   # =>
   config.redis_host = 'localhost'
   config.sidekiq_redis_host = 'localhost'
+  config.sidekiq_redis_db = 0  
   config.active_job.queue_adapter = :inline
 
 end
