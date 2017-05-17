@@ -46,6 +46,8 @@ end
 # =>
 
 gem 'mongoid'
+gem 'mongoid_rails_migrations'
+
 gem 'devise'
 gem 'enumerize', '0.10.1'
 gem 'high_voltage'
