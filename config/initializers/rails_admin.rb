@@ -21,6 +21,26 @@ module RailsAdmin
         end
       end
 
+      class Bgimport < RailsAdmin::Config::Actions::Base
+        RailsAdmin::Config::Actions.register(self)
+        register_instance_option :collection do  true  end
+        register_instance_option :only do [User] end
+        register_instance_option :link_icon do 'fa fa-upload' end
+        register_instance_option :http_methods do [:get, :post] end
+        register_instance_option :controller do
+          proc do
+            if request.get?
+              # just show the page
+            elsif request.post?
+              record_type = params[:model_name]
+              ImportJob.perform_now(params[:file], record_type)
+              flash[:success] = "imporing #{record_type} records"
+              redirect_to back_or_index
+            end
+          end
+        end
+      end
+
     end
   end
 end
@@ -68,5 +88,6 @@ RailsAdmin.config do |config|
 
     # =>
     job_perform
+    bgimport
   end
 end

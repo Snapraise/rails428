@@ -1,0 +1,4 @@
+<%= form_tag bgimport_path, multipart: true do %>
+  <%= file_field_tag :file, required: "required" %>
+  <%= submit_tag "Import", class: 'btn btn-primary' %>
+<% end %>
