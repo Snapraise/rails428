@@ -6,7 +6,7 @@ namespace :rails428 do
     file = CSV.open("tmp/users_#{counter}.csv", "wb")
     file << ["email"]
     counter.times do |i|
-      file << ["user#{i}@#email.com"]
+      file << ["user#{i}@email.com"]
     end
   end
 

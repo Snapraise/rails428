@@ -42,4 +42,8 @@ class User
   field :image
   mount_uploader :image, UserUploader
 
+  def name
+    email
+  end
+
 end
